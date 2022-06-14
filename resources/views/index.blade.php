@@ -7,6 +7,7 @@
     <header>
         <nav>
             <a href="/login">Zaloguj się</a>
+            <a href="/register">Zarejestruj się</a>
         </nav>
     </header>
     <main>RGA</main>
