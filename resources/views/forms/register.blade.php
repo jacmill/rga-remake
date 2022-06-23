@@ -17,7 +17,7 @@
       </label>
       <label class="block">
         <span>Hasło</span>
-        <input type="text" name="password" id="password" class="block w-full">
+        <input type="password" name="password" id="password" class="block w-full">
       </label>
       <div class="flex gap-3 flex-wrap">
         <label>
