@@ -8,6 +8,10 @@
 			<span>Hasło</span>
 			<input type="password" name="password" id="password" class="block">
 		</label>
+		<label class="block">
+			<input type="checkbox" name="rememberme" id="rememberme">
+			<span>Zapamiętaj mnie</span>
+		</label>
 		<button type="submit">Zaloguj</button>
   </form>
 </x-form-layout>

@@ -8,7 +8,7 @@ use Illuminate\Validation\Rules\Password;
 class RegisterController extends Controller
 {
     public function show() {
-        return view("forms.register");
+        return view("auth.register");
     }
     public function create( Request $request) {
         $request->validate([
