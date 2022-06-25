@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('name', 255);
             $table->string('about', 700);
             $table->enum("game", ["CS", "LOL"]);

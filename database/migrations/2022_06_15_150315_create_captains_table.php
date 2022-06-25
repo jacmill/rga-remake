@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('captains', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('name', 255);
             $table->string('last_name', 255);
             $table->string('email', 255);
