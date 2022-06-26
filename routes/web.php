@@ -8,4 +8,7 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('login', [LoginController::class, "show"]);
-Route::get('register', [RegisterController::class, "show"]);
+Route::controller(RegisterController::class)->group(function(){
+    Route::get('register', 'show');
+    Route::post('register', 'create');
+});

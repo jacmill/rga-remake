@@ -1,6 +1,7 @@
 <x-form-layout>
   <div class=" max-w-xl">
     <form action="/register" method="POST">
+      @csrf
       <div class="flex gap-3 flex-wrap">
         <label>
           <span>Imię</span>
@@ -42,4 +43,11 @@
       <button type="submit">Zarejestruj</button>
     </form>
   </div>
+  @if ($errors->any())
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  @endif
 </x-layout>
