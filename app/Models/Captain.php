@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Captain extends Model
 {
-    use HasFactory;
+    protected $table = "captains";
+    protected $fillable = ["name", "last_name", "email", "password", "remember_token"];
 }
