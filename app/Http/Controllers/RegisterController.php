@@ -25,5 +25,8 @@ class RegisterController extends Controller
             "school" => ["required"],
             "teamname" => ["required", "max:255"]
         ]);
+        $captain = Captain::create($request->only("name", "last_name", "email", "password"));
+        $team = Team::create($request->only("name"));
+        return redirect("/login");
     }
 }

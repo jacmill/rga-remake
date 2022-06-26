@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->string('about', 700);
+            $table->string('about', 700)->nullable();
             $table->enum("game", ["CS", "LOL"]);
         });
     }
