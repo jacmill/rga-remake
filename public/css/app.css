@@ -855,6 +855,9 @@ select {
 .overflow-hidden {
   overflow: hidden;
 }
+.break-words {
+  overflow-wrap: break-word;
+}
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -980,6 +983,10 @@ select {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
