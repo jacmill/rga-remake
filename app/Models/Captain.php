@@ -9,4 +9,5 @@ class Captain extends Model
 {
     protected $table = "captains";
     protected $fillable = ["name", "last_name", "email", "password", "remember_token"];
+    public $timestamps = false;
 }

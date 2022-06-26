@@ -9,4 +9,5 @@ class Team extends Model
 {
     protected $table = "teams";
     protected $fillable = ["name", "about", "game"];
+    public $timestamps = false;
 }
