@@ -1,5 +1,6 @@
 <x-form-layout>
-  <form action="/login" method="POST">		
+  <form action="/login" method="POST">
+		@csrf		
 		<label class="block">
 			<span>Adres e-mail</span>
 			<input type="text" name="email" id="email" class="block">
