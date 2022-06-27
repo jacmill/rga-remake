@@ -28,17 +28,19 @@ class RegisterController extends Controller
             "teamname" => ["required", "max:255"],
             "game" => ["required", "in:LOL,CS"],
         ]);
-        $captain = Captain::create([
-            "name" => $request["name"],
-            "last_name" => $request["lastname"], 
-            "email" => $request["email"], 
-            "password" => Hash::make($request["password"])
-        ]);
+
         $team = Team::create([
             "name" => $request["teamname"],
             "about" => $request["about"],
             "game" => $request["game"]
         ]);
+        $captain = new Captain([
+            "name" => $request["name"],
+            "last_name" => $request["lastname"], 
+            "email" => $request["email"], 
+            "password" => Hash::make($request["password"]),
+        ]);
+        $team->captain()->save($captain);
         return redirect("/login");
     }
 }

@@ -55,7 +55,7 @@
       </div>
       <label class="block">
         <span>Kilka słów o drużynie (opcjonalne)</span>
-        <textarea name="description" id="description" cols="30" rows="10" class=" form-textarea block w-full"></textarea>
+        <textarea name="about" id="about" cols="30" rows="10" class=" form-textarea block w-full"></textarea>
       </label>
       <button type="submit">Zarejestruj</button>
     </form>
