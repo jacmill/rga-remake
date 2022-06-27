@@ -24,4 +24,4 @@ Route::get('dashboard', function() {
     $username = $user->name . " " . $user->last_name;
     $team = DB::table('teams')->where('id', $user->team_id)->first()->name;
     return view('dashboard.dashboard', ["username" => $username, "team" => $team]);
-});
+})->middleware("auth");
