@@ -15,6 +15,9 @@
                     <li><a href="/dashboard">Podsumowanie</a></li>
                     <li><a href="/dashboard/teammates">Zawodnicy</a></li>
                 </ul>
+                <div>
+                    <a href="/logout">Wyloguj się</a>
+                </div>
             </nav>
         </aside>
         <section>

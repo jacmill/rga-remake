@@ -13,6 +13,7 @@ Route::get('/', function () {
 Route::controller(LoginController::class)->group(function(){
     Route::get('login', 'show');
     Route::post('login', 'authenticate');
+    Route::get('logout', 'logout');
 });
 Route::controller(RegisterController::class)->group(function(){
     Route::get('register', 'show');
