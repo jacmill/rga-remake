@@ -26,7 +26,7 @@ Route::get('dashboard', function() {
     $team = DB::table('teams')->where('id', $user->team_id)->first()->name;
     return view('dashboard.dashboard', ["username" => $username, "team" => $team]);
 })->middleware("auth");
-Route::controller(ResetPassword::class)->group(function() {
+Route::controller(ResetPassword::class)->middleware(['guest'])->group(function() {
     Route::get('/forgot-password', 'show_forgot_password');
     Route::post('/forgot-password', 'forgot_password');
 });
