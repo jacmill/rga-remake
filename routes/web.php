@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ResetPassword;
 use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -19,12 +20,13 @@ Route::controller(RegisterController::class)->group(function(){
     Route::get('register', 'show');
     Route::post('register', 'create');
 });
-
-
 Route::get('dashboard', function() {
     $user = Auth::user();
     $username = $user->name . " " . $user->last_name;
     $team = DB::table('teams')->where('id', $user->team_id)->first()->name;
     return view('dashboard.dashboard', ["username" => $username, "team" => $team]);
 })->middleware("auth");
-
+Route::controller(ResetPassword::class)->group(function() {
+    Route::get('/forgot-password', 'show_forgot_password');
+    Route::post('/forgot-password', 'forgot_password');
+});
