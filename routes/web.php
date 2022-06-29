@@ -29,4 +29,5 @@ Route::get('dashboard', function() {
 Route::controller(ResetPassword::class)->middleware(['guest'])->group(function() {
     Route::get('/forgot-password', 'show_forgot_password');
     Route::post('/forgot-password', 'forgot_password');
+    Route::get('/reset-password/{token}', 'show_reset_password');
 });
