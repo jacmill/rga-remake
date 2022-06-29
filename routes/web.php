@@ -27,7 +27,9 @@ Route::get('dashboard', function() {
     return view('dashboard.dashboard', ["username" => $username, "team" => $team]);
 })->middleware("auth");
 Route::controller(ResetPassword::class)->middleware(['guest'])->group(function() {
-    Route::get('/forgot-password', 'show_forgot_password');
-    Route::post('/forgot-password', 'forgot_password');
-    Route::get('/reset-password/{token}', 'show_reset_password');
+    Route::get('/forgot-password', 'show_forgot_password')->name('password.request');
+    Route::post('/forgot-password', 'forgot_password')->name('password.email');
+    
+    Route::get('/reset-password/{token}', 'show_reset_password')->name('password.reset');
+    Route::post('/reset-password', 'reset_password')->name('password.update');
 });

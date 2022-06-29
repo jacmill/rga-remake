@@ -789,6 +789,9 @@ select {
 .inline-flex {
   display: inline-flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -857,6 +860,9 @@ select {
 }
 .break-words {
   overflow-wrap: break-word;
+}
+.break-all {
+  word-break: break-all;
 }
 .rounded-lg {
   border-radius: 0.5rem;
