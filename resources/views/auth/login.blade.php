@@ -10,7 +10,7 @@
 			<input type="password" name="password" id="password" class="block">
 		</label>
 		<label class="block">
-			<input type="checkbox" name="rememberme" id="rememberme">
+			<input type="checkbox" name="remember_me" id="remember_me">
 			<span>Zapamiętaj mnie</span>
 		</label>
 		<button type="submit">Zaloguj</button>
