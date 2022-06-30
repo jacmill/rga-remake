@@ -39,8 +39,7 @@ class ResetPassword extends Controller
             function ($user, $password) {
                 $user->forceFill([
                     'password' => Hash::make($password)
-                ])->setRememberToken(Str::random(60));
-     
+                ]);
                 $user->save();
      
                 event(new PasswordReset($user));
@@ -48,7 +47,7 @@ class ResetPassword extends Controller
         );
      
         return $status === Password::PASSWORD_RESET
-                    ? redirect()->route('login')->with('status', __($status))
+                    ? redirect('/login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
     }
 }
