@@ -12,3 +12,6 @@ use Inertia\Inertia;
 Route::get('/', function() {
     return Inertia::render('Home');
 });
+Route::controller(RegisterController::class)->group(function() {
+    Route::get('/register', 'show');
+});

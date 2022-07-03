@@ -1,6 +1,6 @@
 <template>
-    <NavVue/>
+    <Nav/>
 </template>
 <script setup>
-    import NavVue from './Nav.vue';
+    import Nav from './Nav';
 </script>
