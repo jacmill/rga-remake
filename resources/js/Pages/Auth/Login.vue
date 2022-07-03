@@ -15,21 +15,14 @@
         <button type="submit" :disabled="form.processing">Zaloguj</button>
     </form>
 </template>
-<script>
+<script setup>
 import { useForm } from '@inertiajs/inertia-vue3'
-
-export default {
-  setup () {
-    const form = useForm({
+const form = useForm({
       email: null,
       password: null,
       remember: false,
-    })
-    const submit = () => {
-        form.post('/login')
-    }
-
-    return { form, submit }
-  },
-}
+});
+const submit = () => {
+    form.post('/login')
+};
 </script>
