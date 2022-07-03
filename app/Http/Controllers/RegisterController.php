@@ -7,11 +7,12 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Captain;
 use App\Models\Team;
+use Inertia\Inertia;
 
 class RegisterController extends Controller
 {
     public function show() {
-        return view("auth.register");
+        return Inertia::render('Auth/Register');
     }
     public function create( Request $request) {
         $request->validate([
