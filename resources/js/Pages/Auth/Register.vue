@@ -1,5 +1,5 @@
 <template>
-    <h1>
-       Rejestracja 
-    </h1>
+    <form @submit.prevent="submit">
+    </form>
 </template>
+<script></script>

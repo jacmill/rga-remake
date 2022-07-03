@@ -25,8 +25,11 @@ export default {
       password: null,
       remember: false,
     })
+    const submit = () => {
+        form.post('/login')
+    }
 
-    return { form }
+    return { form, submit }
   },
 }
 </script>
