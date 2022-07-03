@@ -15,3 +15,6 @@ Route::get('/', function() {
 Route::controller(RegisterController::class)->group(function() {
     Route::get('/register', 'show');
 });
+Route::controller(LoginController::class)->group(function() {
+    Route::get('/login', 'show');
+});
