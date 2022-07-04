@@ -16,13 +16,13 @@
     </form>
 </template>
 <script setup>
-import { useForm } from '@inertiajs/inertia-vue3'
-const form = useForm({
-      email: null,
-      password: null,
-      remember: false,
-});
-const submit = () => {
-    form.post('/login')
-};
+    import { useForm } from '@inertiajs/inertia-vue3'
+    const form = useForm({
+          email: null,
+          password: null,
+          remember: false,
+    });
+    const submit = () => {
+        form.post('/login')
+    };
 </script>

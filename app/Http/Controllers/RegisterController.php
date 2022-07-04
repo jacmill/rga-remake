@@ -7,6 +7,7 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Captain;
 use App\Models\Team;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class RegisterController extends Controller
@@ -14,12 +15,12 @@ class RegisterController extends Controller
     public function show() {
         return Inertia::render('Auth/Register');
     }
-    public function create( Request $request) {
-        $request->validate([
+    public function store( Request $request) {
+        $credentials = $request->validate([
             "name" => ["required", "max:255"],
             "lastname" => ["required", "max:255"],
             "email" => ["required", "max:255"],
-            "password" => ["required", Password::min(8)
+            "password" => ["required", "confirmed", Password::min(8)
                                                 ->letters()
                                                 ->mixedCase()
                                                 ->numbers()
@@ -31,17 +32,17 @@ class RegisterController extends Controller
         ]);
 
         $team = Team::create([
-            "name" => $request["teamname"],
-            "about" => $request["about"],
-            "game" => $request["game"]
+            "name" => $credentials["teamname"],
+            "about" => $credentials["about"],
+            "game" => $credentials["game"]
         ]);
         $captain = new Captain([
-            "name" => $request["name"],
-            "last_name" => $request["lastname"], 
-            "email" => $request["email"], 
-            "password" => Hash::make($request["password"]),
+            "name" => $credentials["name"],
+            "last_name" => $credentials["lastname"], 
+            "email" => $credentials["email"], 
+            "password" => Hash::make($credentials["password"]),
         ]);
         $team->captain()->save($captain);
-        return redirect("/login");
+        return Redirect::route('login.form');
     }
 }

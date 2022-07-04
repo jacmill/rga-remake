@@ -13,8 +13,9 @@ Route::get('/', function() {
     return Inertia::render('Home');
 });
 Route::controller(RegisterController::class)->group(function() {
-    Route::get('/register', 'show');
+    Route::get('/register', 'show')->name('register.form');
+    Route::post('register', 'store');
 });
 Route::controller(LoginController::class)->group(function() {
-    Route::get('/login', 'show');
+    Route::get('/login', 'show')->name('login.form');
 });
