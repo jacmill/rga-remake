@@ -11,10 +11,10 @@ use Inertia\Inertia;
 
 Route::get('/', function() {
     return Inertia::render('Home');
-});
+})->name('home');
 Route::controller(RegisterController::class)->group(function() {
     Route::get('/register', 'show')->name('register.form');
-    Route::post('register', 'store');
+    Route::post('/register', 'store');
 });
 Route::controller(LoginController::class)->group(function() {
     Route::get('/login', 'show')->name('login.form');

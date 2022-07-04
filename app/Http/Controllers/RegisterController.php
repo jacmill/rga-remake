@@ -15,10 +15,10 @@ class RegisterController extends Controller
     public function show() {
         return Inertia::render('Auth/Register');
     }
-    public function store( Request $request) {
+    public function store(Request $request) {
         $credentials = $request->validate([
             "name" => ["required", "max:255"],
-            "lastname" => ["required", "max:255"],
+            "last_name" => ["required", "max:255"],
             "email" => ["required", "max:255"],
             "password" => ["required", "confirmed", Password::min(8)
                                                 ->letters()
@@ -29,6 +29,7 @@ class RegisterController extends Controller
             "school" => ["required"],
             "teamname" => ["required", "max:255"],
             "game" => ["required", "in:LOL,CS"],
+            "about" => ["max:700"]
         ]);
 
         $team = Team::create([
@@ -38,7 +39,7 @@ class RegisterController extends Controller
         ]);
         $captain = new Captain([
             "name" => $credentials["name"],
-            "last_name" => $credentials["lastname"], 
+            "last_name" => $credentials["last_name"], 
             "email" => $credentials["email"], 
             "password" => Hash::make($credentials["password"]),
         ]);

@@ -3,10 +3,12 @@
         <label class="block">
             <span class="block">Adres e-mail</span>
             <input type="text" v-model="form.email">
+            <div v-if="form.errors.email">{{ form.errors.email }}</div>
         </label>
         <label class="block">
             <span class="block">Hasło</span>
             <input type="password" v-model="form.password">
+            <div v-if="form.errors.password">{{ form.errors.password }}</div>
         </label>
         <label class="block">
             <span>Zapamiętaj mnie</span>

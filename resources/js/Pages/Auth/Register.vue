@@ -61,7 +61,7 @@
         <span class="block">O drużynie</span>
         <textarea v-model="form.about" cols="30" rows="10"></textarea>
     </label>
-    <button type="submit">Zarejestruj</button>
+    <button type="submit" :disabled="form.processing">Zarejestruj</button>
     </form>
 </template>
 <script setup>
