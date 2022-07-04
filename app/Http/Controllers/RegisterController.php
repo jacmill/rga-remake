@@ -44,6 +44,6 @@ class RegisterController extends Controller
             "password" => Hash::make($credentials["password"]),
         ]);
         $team->captain()->save($captain);
-        return Redirect::route('login.form');
+        return Redirect::route('login.show');
     }
 }

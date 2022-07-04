@@ -13,9 +13,15 @@ Route::get('/', function() {
     return Inertia::render('Home');
 })->name('home');
 Route::controller(RegisterController::class)->group(function() {
-    Route::get('/register', 'show')->name('register.form');
-    Route::post('/register', 'store');
+    Route::get('/register', 'show')->name('register.show');
+    Route::post('/register', 'store')->name('register.store');
 });
 Route::controller(LoginController::class)->group(function() {
-    Route::get('/login', 'show')->name('login.form');
+    Route::get('/login', 'show')->name('login.show');
+    Route::post('/login', 'authenticate')->name('login.login');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function() {
+        return Inertia::render('Dashboard/Dashboard');
+    });
 });
