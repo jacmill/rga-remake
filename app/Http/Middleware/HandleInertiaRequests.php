@@ -40,7 +40,7 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             "auth.team" => $request->user()
-                ? Captain::find($request->user()->id)
+                ? Team::find($request->user()->id)
                 : null,
         ]);
     }
