@@ -1,4 +1,5 @@
 <template>
+    <AuthLayout>
     <form @submit.prevent="submit">
         <label class="block">
             <span class="block">Adres e-mail</span>
@@ -16,9 +17,11 @@
         </label>
         <button type="submit" :disabled="form.processing">Zaloguj</button>
     </form>
+    </AuthLayout>
 </template>
 <script setup>
     import { useForm } from '@inertiajs/inertia-vue3'
+    import { AuthLayout } from "../../Shared/AuthLayout.vue";
     const form = useForm({
           email: null,
           password: null,

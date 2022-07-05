@@ -1,11 +1,12 @@
 <template>
-    <header class="flex">
-        <h1 v-if="team !== null">Zalogowano jako: {{ team.name }}</h1>
+    <header class="flex gap-3">
+        <Link v-if="team !== null" href="/dashboard">{{ team.name }}</Link>
         <Nav/>
     </header>
 </template>
 <script setup>
     import Nav from './Nav';
+    import { Link } from '@inertiajs/inertia-vue3';
     import { computed } from 'vue';
     import { usePage } from '@inertiajs/inertia-vue3';
 
