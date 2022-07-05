@@ -14,4 +14,7 @@ class Captain extends Authenticatable
     protected $table = "captains";
     protected $fillable = ["name", "last_name", "email", "password", "remember_token"];
     public $timestamps = false;
+    public function team() {
+        return $this->belongsTo(Team::class);
+    }
 }

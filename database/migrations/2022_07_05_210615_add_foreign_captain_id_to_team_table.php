@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 255);
-            $table->string('about', 700)->nullable();
-            $table->enum("game", ["CS", "LOL"]);;
+        Schema::table('teams', function (Blueprint $table) {
+            $table->foreignId('captain_id')->constrained('captains');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::table('team', function (Blueprint $table) {
+            //
+        });
     }
 };
