@@ -1,4 +1,5 @@
 <template>
+    <AuthLayout>
     <form @submit.prevent="submit">
     <div class="flex gap-3">
         <label class="block">
@@ -63,10 +64,11 @@
     </label>
     <button type="submit" :disabled="form.processing">Zarejestruj</button>
     </form>
+    </AuthLayout>
 </template>
 <script setup>
     import { useForm } from "@inertiajs/inertia-vue3";
-
+    import AuthLayout from "../../Shared/AuthLayout.vue";
     const form = useForm({
         name: null,
         last_name: null,

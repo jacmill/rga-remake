@@ -21,7 +21,7 @@
 </template>
 <script setup>
     import { useForm } from '@inertiajs/inertia-vue3'
-    import { AuthLayout } from "../../Shared/AuthLayout.vue";
+    import AuthLayout from "../../Shared/AuthLayout.vue";
     const form = useForm({
           email: null,
           password: null,
