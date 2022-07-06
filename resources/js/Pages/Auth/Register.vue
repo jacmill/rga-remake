@@ -22,12 +22,13 @@
         <label class="block">
             <span class="block">Hasło</span>
             <input type="password" v-model="form.password">
+            <FormError :error="form.errors.password"/>
         </label>
         <label class="block">
             <span class="block">Powtórz hasło</span>
             <input type="password" v-model="form.password_confirmation">
+            <FormError :error="form.errors.password_confirmation"/>
         </label>
-        <FormError :error="form.errors.password"/>
     </div>
     <div class="flex gap-3">
         <label class="block">

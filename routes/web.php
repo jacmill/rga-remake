@@ -12,7 +12,7 @@ use Inertia\Inertia;
 Route::get('/', function() {
     return Inertia::render('Home');
 })->name('home');
-Route::controller(RegisterController::class)->group(function() {
+Route::controller(RegisterController::class)->middleware(["guest"])->group(function() {
     Route::get('/register', 'show')->name('register.show');
     Route::post('/register', 'store')->name('register.store');
 });
