@@ -6,15 +6,17 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
 
-class ResetPassword extends Controller
+class ResetPasswordController extends Controller
 {
     public function show_forgot_password() {
-        return view("auth.forgot-password");
+        return Inertia::render("Auth/ForgotPassword");
     }
     public function show_reset_password($token) {
-        return view('auth.reset-password', ["token" => $token]);
+        return Inertia::render('Auth/ResetPassword', ["token" => $token]);
     }
     public function forgot_password(Request $request) {
         $request->validate([
@@ -47,7 +49,7 @@ class ResetPassword extends Controller
         );
      
         return $status === Password::PASSWORD_RESET
-                    ? redirect('/login')->with('status', __($status))
+                    ? Redirect::route("login.show")->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
     }
 }
