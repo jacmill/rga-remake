@@ -5,18 +5,18 @@
         <label class="block">
             <span class="block">Imię</span>
             <input type="text" v-model="form.name">
-            <div v-if="form.errors.name">{{ form.errors.name }}</div>
+            <FormError :error="form.errors.name"/>
         </label>
         <label class="block">
             <span class="block">Nazwisko</span>
             <input type="text" v-model="form.last_name">
-            <div v-if="form.errors.last_name">{{ form.errors.last_name }}</div>
+            <FormError :error="form.errors.last_name"/>
         </label>
     </div>
     <label class="block">
         <span class="block">Adres e-mail</span>
         <input type="email" v-model="form.email">
-        <div v-if="form.errors.email">{{ form.errors.email }}</div>
+        <FormError :error="form.errors.email"/>
     </label>
     <div class="flex gap-3">
         <label class="block">
@@ -27,27 +27,27 @@
             <span class="block">Powtórz hasło</span>
             <input type="password" v-model="form.password_confirmation">
         </label>
-        <div v-if="form.errors.password">{{ form.errors.password }}</div>
+        <FormError :error="form.errors.password"/>
     </div>
     <div class="flex gap-3">
         <label class="block">
             <span class="block">Wiek</span>
             <input type="text" v-model="form.age">
-            <div v-if="form.errors.age">{{ form.errors.age }}</div>
+            <FormError :error="form.errors.age"/>
         </label>
         <label class="block">
             <span class="block">Powtórz hasło</span>
             <select v-model="form.school">
                 <option value="test">Test</option>
             </select>
-            <div v-if="form.errors.school">{{ form.errors.school }}</div>
+            <FormError :error="form.errors.school"/>
         </label>
     </div>
     <div class="flex gap-3">
         <label class="block">
             <span class="block">Nazwa drużyny</span>
             <input type="text" v-model="form.teamname">
-            <div v-if="form.errors.teamname">{{ form.errors.teamname }}</div>
+            <FormError :error="form.errors.teamname"/>
         </label>
         <label class="block">
             <span class="block">Gra</span>
@@ -55,7 +55,7 @@
                 <option value="CS">CS:GO</option>
                 <option value="LOL">LoL</option>
             </select>
-            <div v-if="form.errors.game">{{ form.errors.game }}</div>
+            <FormError :error="form.errors.game"/>
         </label>
     </div>
     <label class="block">
@@ -69,6 +69,7 @@
 <script setup>
     import { useForm } from "@inertiajs/inertia-vue3";
     import AuthLayout from "../../Shared/AuthLayout.vue";
+    import FormError from "../../Shared/components/FormError.vue";
     const form = useForm({
         name: null,
         last_name: null,
