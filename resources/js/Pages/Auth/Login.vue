@@ -17,9 +17,11 @@
         </label>
         <button type="submit" :disabled="form.processing">Zaloguj</button>
     </form>
+    <Link href="/forgot_password">Zapomniałeś hasła?</Link>
     </AuthLayout>
 </template>
 <script setup>
+    import { Link } from '@inertiajs/inertia-vue3';
     import { useForm } from '@inertiajs/inertia-vue3'
     import AuthLayout from "../../Shared/AuthLayout.vue";
     const form = useForm({
