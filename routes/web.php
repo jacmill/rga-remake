@@ -16,10 +16,11 @@ Route::controller(RegisterController::class)->middleware(["guest"])->group(funct
     Route::get('/register', 'show')->name('register.show');
     Route::post('/register', 'store')->name('register.store');
 });
-Route::controller(LoginController::class)->middleware(["guest"])->group(function() {
-    Route::get('/login', 'show')->name('login.show');
-    Route::post('/login', 'authenticate')->name('login.login');
+Route::middleware(["guest"])->group(function() {
+    Route::get('/login', [LoginController::class, "show"])->name('login.show');
+    Route::post('/login', [LoginController::class, "authenticate"])->name('login.login');
 });
+Route::post('/logout', [LoginController::class, "logout"]);
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function() {
         return Inertia::render('Dashboard/Dashboard');
