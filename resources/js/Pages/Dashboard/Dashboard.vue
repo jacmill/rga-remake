@@ -1,7 +1,6 @@
 <template>
-    <h1>
-        
-    </h1>
+    <DashboardLayout></DashboardLayout>
 </template>
 <script setup>
+import DashboardLayout from '../../Shared/DashboardLayout.vue';
 </script>

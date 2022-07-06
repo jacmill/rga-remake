@@ -1,7 +1,7 @@
 <template>
     <header class="flex gap-3">
         <Link v-if="team !== null" href="/dashboard">{{ team.name }}</Link>
-        <Nav v-else/>
+        <Nav v-else />
     </header>
 </template>
 <script setup>

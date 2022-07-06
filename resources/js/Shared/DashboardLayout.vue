@@ -1,3 +1,6 @@
 <template>
+    <DashboardNav></DashboardNav>
 </template>
-<script setup></script>
+<script setup>
+    import DashboardNav from './components/DashboardNav.vue';
+</script>
