@@ -13,7 +13,7 @@
         </label>
         <label class="block">
             <span>Zapamiętaj mnie</span>
-            <input type="checkbox" v-model="form.remember">
+            <input type="checkbox" v-model="form.remember_me">
         </label>
         <button type="submit" :disabled="form.processing">Zaloguj</button>
     </form>
@@ -27,7 +27,7 @@
     const form = useForm({
           email: null,
           password: null,
-          remember: false,
+          remember_me: false,
     });
     const submit = () => {
         form.post('/login')

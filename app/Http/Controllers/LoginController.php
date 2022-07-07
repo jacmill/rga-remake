@@ -13,11 +13,12 @@ class LoginController extends Controller
         return Inertia::render('Auth/Login');
     }
     public function authenticate(Request $request) {
-        $credentials = $request->validate([
+        $request->validate([
             "email" => ["required"],
-            "password" => ["required"]
+            "password" => ["required"],
+            "remember_me" => ["required"]
         ]);
-        if(Auth::attempt($credentials, $request->get("remember_me"))) {
+        if(Auth::attempt($request->only(["email", "password"]), $request["remember_me"])) {
             $request->session()->regenerate();
             return Redirect::route('home');
         }
