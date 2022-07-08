@@ -1,17 +1,17 @@
 <template>
     <AuthLayout>
-    <form @submit.prevent="submit">
-        <label class="block">
+    <form @submit.prevent="submit" class="grid gap-y-2">
+        <label class="block gap-y-1">
             <span class="block">Adres e-mail</span>
-            <input type="text" v-model="form.email">
+            <input type="text" v-model="form.email" class="text-black">
             <div v-if="form.errors.email">{{ form.errors.email }}</div>
         </label>
-        <label class="block">
+        <label class="block gap-y-1">
             <span class="block">Hasło</span>
-            <input type="password" v-model="form.password">
+            <input type="password" v-model="form.password" class="text-black">
             <div v-if="form.errors.password">{{ form.errors.password }}</div>
         </label>
-        <label class="block">
+        <label class="flex gap-x-2 items-center">
             <span>Zapamiętaj mnie</span>
             <input type="checkbox" v-model="form.remember_me">
         </label>

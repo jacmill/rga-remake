@@ -4,36 +4,36 @@
     <div class="flex gap-3">
         <label class="block">
             <span class="block">Imię</span>
-            <input type="text" v-model="form.name">
+            <input type="text" v-model="form.name" class="text-black">
             <FormError :error="form.errors.name"/>
         </label>
         <label class="block">
             <span class="block">Nazwisko</span>
-            <input type="text" v-model="form.last_name">
+            <input type="text" v-model="form.last_name" class="text-black">
             <FormError :error="form.errors.last_name"/>
         </label>
     </div>
     <label class="block">
         <span class="block">Adres e-mail</span>
-        <input type="email" v-model="form.email">
+        <input type="email" v-model="form.email" class="text-black">
         <FormError :error="form.errors.email"/>
     </label>
     <div class="flex gap-3">
         <label class="block">
             <span class="block">Hasło</span>
-            <input type="password" v-model="form.password">
+            <input type="password" v-model="form.password" class="text-black">
             <FormError :error="form.errors.password"/>
         </label>
         <label class="block">
             <span class="block">Powtórz hasło</span>
-            <input type="password" v-model="form.password_confirmation">
+            <input type="password" v-model="form.password_confirmation" class="text-black">
             <FormError :error="form.errors.password_confirmation"/>
         </label>
     </div>
     <div class="flex gap-3">
         <label class="block">
             <span class="block">Wiek</span>
-            <input type="text" v-model="form.age">
+            <input type="text" v-model="form.age" class="text-black">
             <FormError :error="form.errors.age"/>
         </label>
         <label class="block">
@@ -47,7 +47,7 @@
     <div class="flex gap-3">
         <label class="block">
             <span class="block">Nazwa drużyny</span>
-            <input type="text" v-model="form.teamname">
+            <input type="text" v-model="form.teamname" class="text-black">
             <FormError :error="form.errors.teamname"/>
         </label>
         <label class="block">
@@ -61,7 +61,7 @@
     </div>
     <label class="block">
         <span class="block">O drużynie</span>
-        <textarea v-model="form.about" cols="30" rows="10"></textarea>
+        <textarea v-model="form.about" cols="30" rows="10" class="text-black"></textarea>
     </label>
     <button type="submit" :disabled="form.processing">Zarejestruj</button>
     </form>

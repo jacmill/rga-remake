@@ -22184,7 +22184,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = ["onSubmit"];
 var _hoisted_2 = {
-  "class": "block"
+  "class": "block gap-y-1"
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
@@ -22197,7 +22197,7 @@ var _hoisted_4 = {
   key: 0
 };
 var _hoisted_5 = {
-  "class": "block"
+  "class": "block gap-y-1"
 };
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
@@ -22210,7 +22210,7 @@ var _hoisted_7 = {
   key: 0
 };
 var _hoisted_8 = {
-  "class": "block"
+  "class": "flex gap-x-2 items-center"
 };
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Zapamiętaj mnie", -1
@@ -22225,12 +22225,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["AuthLayout"], null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-        onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.submit, ["prevent"])
+        onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.submit, ["prevent"]),
+        "class": "grid gap-y-2"
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         type: "text",
         "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
           return $setup.form.email = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.email]]), $setup.form.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.form.errors.email), 1
@@ -22239,7 +22241,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "password",
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.form.password = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.password]]), $setup.form.errors.password ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.form.errors.password), 1
@@ -22435,7 +22438,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
           return $setup.form.name = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.name]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormError"], {
@@ -22446,7 +22450,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.form.last_name = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.last_name]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormError"], {
@@ -22457,7 +22462,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "email",
         "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
           return $setup.form.email = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.email]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormError"], {
@@ -22468,7 +22474,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "password",
         "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
           return $setup.form.password = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.password]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormError"], {
@@ -22479,7 +22486,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "password",
         "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
           return $setup.form.password_confirmation = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.password_confirmation]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormError"], {
@@ -22490,7 +22498,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
           return $setup.form.age = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.age]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormError"], {
@@ -22511,7 +22520,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
           return $setup.form.teamname = $event;
-        })
+        }),
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.teamname]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormError"], {
@@ -22533,7 +22543,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.about = $event;
         }),
         cols: "30",
-        rows: "10"
+        rows: "10",
+        "class": "text-black"
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.about]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -22833,26 +22844,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "w-1/5 h-screen bg-zinc-800"
+};
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Panel Kapitana", -1
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Panel Kapitana", -1
 /* HOISTED */
 );
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, null, -1
+var _hoisted_3 = {
+  "class": "h-full"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Wyloguj się");
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Wyloguj się");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("aside", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", null, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("aside", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
     href: "/logout",
     method: "POST",
     as: "button",
-    type: "button"
+    type: "button",
+    "class": "text-red-500"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_3];
+      return [_hoisted_5];
     }),
     _: 1
     /* STABLE */
