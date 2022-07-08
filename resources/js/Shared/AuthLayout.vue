@@ -4,7 +4,9 @@
             <Link href="/" class=" p-2 rounded-lg bg-green-500">Powrót</Link>
         </header>
         <main class="flex items-center justify-center flex-col">
-            <slot />
+            <section class="flex justify-center flex-col gap-y-2 bg-zinc-800 p-5 rounded-xl">
+                <slot />
+            </section>
         </main>
     </div>
 </template>

@@ -15,9 +15,9 @@
             <span>Zapamiętaj mnie</span>
             <input type="checkbox" v-model="form.remember_me">
         </label>
-        <button type="submit" :disabled="form.processing">Zaloguj</button>
+        <button type="submit" :disabled="form.processing" class="p-2 rounded-lg bg-blue-500">Zaloguj</button>
     </form>
-    <Link href="/forgot_password">Zapomniałeś hasła?</Link>
+    <Link href="/forgot_password" class=" text-center">Zapomniałeś hasła?</Link>
     </AuthLayout>
 </template>
 <script setup>
