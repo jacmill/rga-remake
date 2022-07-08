@@ -3,7 +3,7 @@
         <header class=" p-4">
             <Link href="/" class=" p-2 rounded-lg bg-green-500">Powrót</Link>
         </header>
-        <main>
+        <main class="flex items-center justify-center flex-col">
             <slot />
         </main>
     </div>
