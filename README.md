@@ -1,1 +1,2 @@
 # RGA REMAKE
+This is remake of [RGA website](rolnikgamearena.pl), which after code inspection I find very hard to mantain for admin and for user, other than that i find it lacking in user experience and overall desig (: 
