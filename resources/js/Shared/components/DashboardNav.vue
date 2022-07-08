@@ -4,6 +4,7 @@
         <nav class="h-full">
             <div></div>
             <div>
+                <Link href="/">Wyjdź</Link>
                 <Link href="/logout" method="POST" as="button" type="button" class=" text-red-500">Wyloguj się</Link>
             </div>
         </nav>
