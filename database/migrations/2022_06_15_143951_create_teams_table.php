@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('about', 700)->nullable();
-            $table->enum("game", ["CS", "LOL"]);;
+            $table->enum("game", ["CS", "LOL"]);
         });
     }
 

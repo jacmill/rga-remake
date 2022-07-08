@@ -1,10 +1,12 @@
 <template>
-    <header>
-        <Link href="/">Powrót</Link>
-    </header>
-    <main>
-        <slot />
-    </main>
+    <div class=" h-screen text-white bg-zinc-900">
+        <header class=" p-4">
+            <Link href="/" class=" p-2 rounded-lg bg-green-500">Powrót</Link>
+        </header>
+        <main>
+            <slot />
+        </main>
+    </div>
 </template>
 <script setup>
     import { Link } from '@inertiajs/inertia-vue3';
