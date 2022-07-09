@@ -5,7 +5,7 @@
                 <img src="../../../images/logo.svg" alt="logo" class="w-4/6">
             </Link>
         </header>
-        <nav class="h-full">
+        <nav>
             <div>
                 <ul class="list-none">
                     <li><Link href="/dashboard/teammates">Zawodnicy</Link></li>

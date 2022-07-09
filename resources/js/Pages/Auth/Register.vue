@@ -38,7 +38,7 @@
         </label>
         <label class="block">
             <span class="block">Powtórz hasło</span>
-            <select v-model="form.school">
+            <select v-model="form.school" class="text-black">
                 <option value="test">Test</option>
             </select>
             <FormError :error="form.errors.school"/>
@@ -52,7 +52,7 @@
         </label>
         <label class="block">
             <span class="block">Gra</span>
-            <select v-model="form.game">
+            <select v-model="form.game" class="text-black">
                 <option value="CS">CS:GO</option>
                 <option value="LOL">LoL</option>
             </select>

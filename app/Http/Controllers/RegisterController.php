@@ -40,7 +40,9 @@ class RegisterController extends Controller
         $captain = new Captain([
             "name" => $credentials["name"],
             "last_name" => $credentials["last_name"], 
-            "email" => $credentials["email"], 
+            "email" => $credentials["email"],
+            "age" => $credentials["age"],
+            "school" => $credentials["school"],
             "password" => Hash::make($credentials["password"]),
         ]);
         $team->captain()->save($captain);

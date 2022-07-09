@@ -12,7 +12,7 @@ class Captain extends Authenticatable
     use Notifiable;
 
     protected $table = "captains";
-    protected $fillable = ["name", "last_name", "email", "password", "remember_token"];
+    protected $fillable = ["name", "last_name", "email", "age", "school", "password", "remember_token"];
     public $timestamps = false;
     public function team() {
         return $this->belongsTo(Team::class);
