@@ -36,4 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function() {
         return Inertia::render('Dashboard/Dashboard');
     });
+    Route::get('/dashboard/teammates', function() {
+        return Inertia::render('Dashboard/Teammates');
+    });
 });
