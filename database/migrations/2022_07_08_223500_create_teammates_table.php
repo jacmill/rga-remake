@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('teammates', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('last_name', 255);
-            $table->string('email', 255);
-            $table->string('school', 255);
+            $table->string('name', 255)->nullable();
+            $table->string('last_name', 255)->nullable();
+            $table->string('school', 255)->nullable();
+            $table->integer('age')->unsigned()->nullable();
             $table->foreignId('team_id')->constrained('teams');
-            $table->rememberToken();
         });
     }
 

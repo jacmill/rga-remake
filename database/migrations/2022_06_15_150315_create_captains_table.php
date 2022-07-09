@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email', 255);
             $table->string('password', 255);
             $table->string('school', 255);
+            $table->integer('age')->unsigned();
             $table->foreignId('team_id')->constrained('teams');
             $table->rememberToken();
         });

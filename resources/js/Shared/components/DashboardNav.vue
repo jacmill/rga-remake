@@ -1,6 +1,10 @@
 <template>
-    <aside class=" w-1/5 h-screen bg-zinc-800">
-        <h1>Panel Kapitana</h1>
+    <aside class=" w-64 h-screen bg-zinc-800">
+        <header>
+            <Link href="/dashboard" class="flex justify-center p-4 bg-zinc-900">
+                <img src="../../../images/logo.svg" alt="logo" class="w-4/6">
+            </Link>
+        </header>
         <nav class="h-full">
             <div></div>
             <div>
