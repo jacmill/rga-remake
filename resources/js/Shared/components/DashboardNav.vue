@@ -8,7 +8,7 @@
         <nav>
             <div>
                 <ul class="list-none">
-                    <li><Link href="/dashboard/teammates">Zawodnicy</Link></li>
+                    <li><DashboardNavItem to="/dashboard/teammates">Zawodnicy</DashboardNavItem></li>
                 </ul>
             </div>
             <div>
@@ -20,4 +20,5 @@
 </template>
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3';
+import DashboardNavItem from './DashboardNavItem.vue';
 </script>
