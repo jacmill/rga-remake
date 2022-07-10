@@ -20,7 +20,7 @@ class LoginController extends Controller
         ]);
         if(Auth::attempt($request->only(["email", "password"]), $request["remember_me"])) {
             $request->session()->regenerate();
-            return Redirect::route('home');
+            return Redirect::route('dashboard');
         }
     }
     public function logout(Request $request) {

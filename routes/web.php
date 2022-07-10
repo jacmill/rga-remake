@@ -35,7 +35,7 @@ Route::controller(ResetPasswordController::class)->middleware(["guest"])->group(
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function() {
         return Inertia::render('Dashboard/Dashboard');
-    });
+    })->name('dasboard');
     Route::get('/dashboard/teammates', function() {
         return Inertia::render('Dashboard/Teammates');
     });
