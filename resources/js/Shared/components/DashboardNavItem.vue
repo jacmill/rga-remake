@@ -1,6 +1,8 @@
 <template>
-    <div class="w-full text-zinc-300 p-2">
-        <Link href="{{ to }}"><slot/></Link>
+    <div class="w-full p-2 text-zinc-500 text-lg hover:text-zinc-300 hover:bg-zinc-700">
+        <Link v-bind:href="props.to">
+            <slot/>
+        </Link>
     </div>
 </template>
 <script setup>
