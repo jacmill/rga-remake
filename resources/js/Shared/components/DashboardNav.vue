@@ -8,7 +8,11 @@
         <nav class="p-2">
             <div>
                 <ul class="list-none">
-                    <li><DashboardNavItem to="/dashboard/teammates">Zawodnicy</DashboardNavItem></li>
+                    <li>
+                        <DashboardNavItem to="/dashboard/teammates" :active="{'active': $page.component === 'Dashboard/Teammates'}">
+                            Zawodnicy
+                        </DashboardNavItem>
+                    </li>
                 </ul>
             </div>
             <div>
