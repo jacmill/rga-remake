@@ -46,6 +46,28 @@ class RegisterController extends Controller
             "password" => Hash::make($credentials["password"]),
         ]);
         $team->captain()->save($captain);
+        $team->teammates()->createMany([
+            [
+                "teammate_id" => 1
+            ],
+            [
+                "teammate_id" => 2
+            ],
+            [
+                "teammate_id" => 3
+            ],
+            [
+                "teammate_id" => 4
+            ],
+            [
+                "is_coach" => true,
+                "teammate_id" => 5
+            ],
+            [
+                "is_substitute" => true,
+                "teammate_id" => 6
+            ],
+        ]);
         return Redirect::route('login.show');
     }
 }
