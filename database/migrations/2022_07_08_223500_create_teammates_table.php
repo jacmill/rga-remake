@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('last_name', 255)->nullable();
             $table->string('school', 255)->nullable();
             $table->integer('age')->unsigned()->nullable();
+            $table->boolean('is_coach')->default(false);
             $table->foreignId('team_id')->constrained('teams');
         });
     }
