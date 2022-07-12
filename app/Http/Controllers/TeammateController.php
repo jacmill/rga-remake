@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use App\Models\Teammate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class TeammateController extends Controller
@@ -15,7 +17,17 @@ class TeammateController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Dashboard/Teammates');
+        $teammates = Team::find(Auth::user()->team_id)->teammates;
+        return Inertia::render('Dashboard/Teammates', [
+            "teammates" => $teammates->map(function($teammate){
+                return [
+                    "name" => $teammate->name,
+                    "last_name" => $teammate->last_name,
+                    "age" => $teammate->age,
+                    "school" => $teammate->school,
+                ];
+            })
+        ]);
     }
 
     /**
