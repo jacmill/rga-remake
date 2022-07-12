@@ -8,5 +8,9 @@
     </DashboardLayout>
 </template>
 <script setup>
+import { usePage } from '@inertiajs/inertia-vue3';
 import DashboardLayout from '../../Shared/DashboardLayout.vue';
+
+const teammates = usePage().props.value.teammates;
+console.table(teammates);
 </script>

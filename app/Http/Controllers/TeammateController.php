@@ -25,6 +25,8 @@ class TeammateController extends Controller
                     "last_name" => $teammate->last_name,
                     "age" => $teammate->age,
                     "school" => $teammate->school,
+                    "is_coach" => $teammate->is_coach,
+                    "is_substitute" => $teammate->is_substitute             
                 ];
             })
         ]);
