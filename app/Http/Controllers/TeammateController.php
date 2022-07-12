@@ -20,14 +20,27 @@ class TeammateController extends Controller
         $teammates = Team::find(Auth::user()->team_id)->teammates;
         return Inertia::render('Dashboard/Teammates', [
             "teammates" => $teammates->map(function($teammate){
-                return [
-                    "name" => $teammate->name,
-                    "last_name" => $teammate->last_name,
-                    "age" => $teammate->age,
-                    "school" => $teammate->school,
-                    "is_coach" => $teammate->is_coach,
-                    "is_substitute" => $teammate->is_substitute             
-                ];
+                $isAnyFieldEmpty = collect($teammate)->values()->contains(null);
+                if($isAnyFieldEmpty) {
+                    return [
+                        'is_empty' => true,
+                        'id' => $teammate->teammate_id,
+                        'is_coach' => $teammate->is_coach,
+                        'is_substitute' => $teammate->is_substitute,
+                    ];
+                } else {
+                    return [
+                        'is_empty' => false,
+                        "name" => $teammate->name,
+                        "last_name" => $teammate->last_name,
+                        "age" => $teammate->age,
+                        "school" => $teammate->school,
+                        'id' => $teammate->teammate_id,
+                        "is_coach" => $teammate->is_coach,
+                        "is_substitute" => $teammate->is_substitute             
+                    ];
+                }
+                
             })
         ]);
     }
