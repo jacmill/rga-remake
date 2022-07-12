@@ -25,18 +25,23 @@ Route::middleware(["guest"])->group(function() {
 });
 Route::post('/logout', [LoginController::class, "logout"]);
 
-Route::controller(ResetPasswordController::class)->middleware(["guest"])->group(function() {
+Route::group([
+    "controller" => ResetPasswordController::class,
+    "middleware" => ["guest"]
+], function() {
     Route::get('/forgot_password', 'show_forgot_password')->name("password.request");
     Route::post('/forgot_password', 'forgot_password')->name("password.email");
     Route::get('/reset_password/{token}', 'show_reset_password')->name("password.reset");
     Route::post('/reset_password/', 'reset_password')->name("password.update");
 });
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function() {
+Route::group([
+    "prefix" => "dashboard",
+    "middleware" => "auth"
+], function() {
+    Route::get('/', function() {
         return Inertia::render('Dashboard/Dashboard');
     })->name('dashboard');
-    Route::get('/dashboard/teammates', function() {
+    Route::get('/teammates', function() {
         return Inertia::render('Dashboard/Teammates');
     });
 });
