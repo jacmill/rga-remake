@@ -1,7 +1,9 @@
 <template>
     <div class="flex">
-        <DashboardNav></DashboardNav>
-        <main class="w-full bg-zinc-700"></main>
+        <DashboardNav />
+        <main class="w-full bg-zinc-700">
+            <slot />
+        </main>
     </div>
 </template>
 <script setup>
