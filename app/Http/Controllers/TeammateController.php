@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Teammate;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TeammateController extends Controller
 {
@@ -14,7 +15,7 @@ class TeammateController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Dashboard/Teammates');
     }
 
     /**
@@ -35,7 +36,6 @@ class TeammateController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**

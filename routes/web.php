@@ -4,6 +4,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\TeammateController;
 use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -47,7 +48,5 @@ Route::group([
     Route::get('/', function() {
         return Inertia::render('Dashboard/Dashboard');
     })->name('dashboard');
-    Route::get('/teammates', function() {
-        return Inertia::render('Dashboard/Teammates');
-    });
+    Route::resource('/teammates', TeammateController::class);
 });
