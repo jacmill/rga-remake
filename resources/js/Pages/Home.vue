@@ -2,5 +2,5 @@
     <HomeLayout></HomeLayout>
 </template>
 <script setup>
-    import HomeLayout from "../Shared/HomeLayout";
+    import HomeLayout from "../Shared/HomeLayout.vue";
 </script>
