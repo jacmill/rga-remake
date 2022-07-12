@@ -14,14 +14,20 @@ Route::get('/', function() {
     return Inertia::render('Home');
 })->name('home');
 
-Route::controller(RegisterController::class)->middleware(["guest"])->group(function() {
+Route::group([
+    "controller" => RegisterController::class,
+    "middleware" => ["guest"]
+], function() {
     Route::get('/register', 'show')->name('register.show');
     Route::post('/register', 'store')->name('register.store');
 });
 
-Route::middleware(["guest"])->group(function() {
-    Route::get('/login', [LoginController::class, "show"])->name('login.show');
-    Route::post('/login', [LoginController::class, "authenticate"])->name('login.login');
+Route::group([
+    "controller" => LoginController::class,
+    "middleware" => ["guest"]
+], function() {
+    Route::get('/login', "show")->name('login.show');
+    Route::post('/login', "authenticate")->name('login.login');
 });
 Route::post('/logout', [LoginController::class, "logout"]);
 
