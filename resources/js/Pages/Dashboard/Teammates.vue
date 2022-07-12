@@ -3,6 +3,9 @@
         <h1 class="text-white text-2xl font-bold">Zawodnicy</h1>
         <section>
             <ul class="list-none">
+                <li v-for="(item, index) in teammates" :key="index">
+                    {{item}} {{index}}
+                </li>
             </ul>
         </section>
     </DashboardLayout>
