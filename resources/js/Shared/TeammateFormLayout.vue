@@ -27,10 +27,11 @@
 <script setup>
 import { useForm } from "@inertiajs/inertia-vue3";
 import FormError from "./components/FormError.vue";
-    const form = useForm({
-        name: null,
-        last_name: null,
-        age: null,
-        school: "test"        
-    });
+
+const form = useForm({
+    name: null,
+    last_name: null,
+    age: null,
+    school: "test"        
+});
 </script>
