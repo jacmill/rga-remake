@@ -93,7 +93,7 @@ class TeammateController extends Controller
                 "last_name" => $teammate["last_name"],
                 "age" => $teammate["age"],
                 "school" => $teammate["school"],
-                "id" => $teammate["teammate_id"]
+                "id" => $teammate["team_id"]
             ],
         ]);
     }
@@ -114,9 +114,9 @@ class TeammateController extends Controller
             "age" => ["required", "numeric"],
             "school" => ["required"]
         ]);
-        dd($request);
+        dd($teammate->teammate_id);
         $teammate = Teammate::where("teammate_id", $teammate->teammate_id)
-                            ->where("team_id", $request["id"])
+                            ->where("team_id", $request->only("team"))
                             ->first();
         dd($teammate);
     }
