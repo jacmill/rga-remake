@@ -2,9 +2,9 @@
     <DashboardLayout>
         <h1 class="text-white text-2xl font-bold">Zawodnicy</h1>
         <section>
-            <ul class="list-none">
+            <ul class="list-none w-1/2">
                 <li v-for="(teammate, index) in teammates" :key="index" 
-                    class="flex">
+                    class="flex justify-between">
                     <p v-if="teammate.is_coach == true">Trener</p>
                     <p v-else-if="teammate.is_substitute == true">Zawodnik rezerwowy</p>
                     <p v-else>{{ `Zawodnik ${teammate.id + 1}` }}</p>
@@ -19,5 +19,4 @@ import { usePage } from '@inertiajs/inertia-vue3';
 import DashboardLayout from '../../Shared/DashboardLayout.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 const teammates = usePage().props.value.teammates;
-console.table(teammates);
 </script>

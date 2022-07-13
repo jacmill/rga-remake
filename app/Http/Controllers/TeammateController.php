@@ -6,6 +6,7 @@ use App\Models\Team;
 use App\Models\Teammate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class TeammateController extends Controller
@@ -93,7 +94,8 @@ class TeammateController extends Controller
                 "last_name" => $teammate["last_name"],
                 "age" => $teammate["age"],
                 "school" => $teammate["school"],
-                "id" => $teammate["team_id"]
+                "team_id" => $teammate["team_id"],
+                "id" => $teammate["teammate_id"],
             ],
         ]);
     }
@@ -107,18 +109,22 @@ class TeammateController extends Controller
      */
     public function update(Request $request, Teammate $teammate)
     {
-        
         $request->validate([
             "name" => ["required"],
             "last_name" => ["required"],
             "age" => ["required", "numeric"],
             "school" => ["required"]
         ]);
-        dd($teammate->teammate_id);
         $teammate = Teammate::where("teammate_id", $teammate->teammate_id)
-                            ->where("team_id", $request->only("team"))
+                            ->where("team_id", $request->input("team"))
                             ->first();
-        dd($teammate);
+        $teammate->update([
+            "name" => $request["name"],
+            "last_name" => $request["last_name"],
+            "age" => $request["age"],
+            "school" => $request["school"],
+        ]);
+        return Redirect::intended('/dashboard/teammates');
     }
 
     /**

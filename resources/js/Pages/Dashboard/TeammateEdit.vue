@@ -39,7 +39,7 @@ const form = useForm({
     last_name: teammate.last_name,
     age: teammate.age,
     school: teammate.school,
-    team: teammate.id       
+    team: teammate.team_id       
 });
 const submit = () => {
     form.patch(`/dashboard/teammates/${teammate.id}`);
