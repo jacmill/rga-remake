@@ -37,7 +37,7 @@
             <FormError :error="form.errors.age"/>
         </label>
         <label class="block">
-            <span class="block">Powtórz hasło</span>
+            <span class="block">Szkoła</span>
             <select v-model="form.school" class="text-black">
                 <option value="test">Test</option>
             </select>
