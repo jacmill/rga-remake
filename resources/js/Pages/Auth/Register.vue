@@ -70,7 +70,7 @@
 <script setup>
     import { useForm } from "@inertiajs/inertia-vue3";
     import AuthLayout from "../../Shared/AuthLayout.vue";
-    import FormError from "../../Shared/components/FormError.vue";
+    import FormError from "../../Shared/components/Forms/FormError.vue";
     const form = useForm({
         name: null,
         last_name: null,

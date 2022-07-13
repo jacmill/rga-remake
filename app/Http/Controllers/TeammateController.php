@@ -87,7 +87,9 @@ class TeammateController extends Controller
         $teammate = Teammate::where("teammate_id", $teammate->teammate_id)
                             ->where("team_id", Auth::user()->team_id)
                             ->first();
-        return Inertia::render('');
+        return Inertia::render('Dashboard/TeammateEdit', [
+            "teammate" => $teammate
+        ]);
     }
 
     /**
