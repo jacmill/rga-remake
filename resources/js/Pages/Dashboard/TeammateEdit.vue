@@ -32,19 +32,16 @@ import { useForm, usePage } from "@inertiajs/inertia-vue3";
 import DashboardLayout from "../../Shared/DashboardLayout.vue"
 import FormError from "../../Shared/components/Forms/FormError.vue";
 
-const props = defineProps({
-    teammateId: Number
-});
-const teammateId = usePage().props.value.teammateId;
 const teammate = usePage().props.value.teammate;
 console.log(teammate);
 const form = useForm({
-    name: null,
-    last_name: null,
-    age: null,
-    school: "test"        
+    name: teammate.name,
+    last_name: teammate.last_name,
+    age: teammate.age,
+    school: teammate.school,
+    id: teammate.id         
 });
 const submit = () => {
-    form.patch(`/dashboard/teammates/${teammateId}`);
+    form.patch(`/dashboard/teammates/${teammate.id}`);
 }
 </script>

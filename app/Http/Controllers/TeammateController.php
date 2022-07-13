@@ -88,7 +88,13 @@ class TeammateController extends Controller
                             ->where("team_id", Auth::user()->team_id)
                             ->first();
         return Inertia::render('Dashboard/TeammateEdit', [
-            "teammate" => $teammate
+            "teammate" => [
+                "name" => $teammate["name"],
+                "last_name" => $teammate["last_name"],
+                "age" => $teammate["age"],
+                "school" => $teammate["school"],
+                "id" => $teammate["teammate_id"]
+            ],
         ]);
     }
 
@@ -101,7 +107,18 @@ class TeammateController extends Controller
      */
     public function update(Request $request, Teammate $teammate)
     {
-        //
+        
+        $request->validate([
+            "name" => ["required"],
+            "last_name" => ["required"],
+            "age" => ["required", "numeric"],
+            "school" => ["required"]
+        ]);
+        dd($request);
+        $teammate = Teammate::where("teammate_id", $teammate->teammate_id)
+                            ->where("team_id", $request["id"])
+                            ->first();
+        dd($teammate);
     }
 
     /**
