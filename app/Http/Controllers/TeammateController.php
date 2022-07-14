@@ -21,7 +21,9 @@ class TeammateController extends Controller
         $teammates = Team::find(Auth::user()->team_id)->teammates;
         return Inertia::render('Dashboard/Teammates', [
             "teammates" => $teammates->map(function($teammate){
-                $isAnyFieldEmpty = collect($teammate)->values()->contains(null);
+                $isAnyFieldEmpty = collect($teammate)->values()->contains(function($value) {
+                    return $value === null;
+                });
                 if($isAnyFieldEmpty) {
                     return [
                         'is_empty' => true,

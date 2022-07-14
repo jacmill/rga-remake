@@ -49,4 +49,7 @@ Route::group([
         return Inertia::render('Dashboard/Dashboard');
     })->name('dashboard');
     Route::resource('/teammates', TeammateController::class);
+    Route::get('/team', function() {
+        return Inertia::render('Dashboard/Team');
+    })->name('dashboard.team');
 });

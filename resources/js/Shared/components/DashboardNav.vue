@@ -7,10 +7,15 @@
         </header>
         <nav class="p-2">
             <div>
-                <ul class="list-none">
+                <ul class="list-none grid gap-y-2">
                     <li>
                         <DashboardNavItem to="/dashboard/teammates" :active="{'active': $page.component === 'Dashboard/Teammates'}">
                             Zawodnicy
+                        </DashboardNavItem>
+                    </li>
+                    <li>
+                        <DashboardNavItem to="/dashboard/teammates" :active="{'active': $page.component === 'Dashboard/Team'}">
+                            Zespół
                         </DashboardNavItem>
                     </li>
                 </ul>
