@@ -6,6 +6,7 @@ use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\TeammateController;
 use App\Models\Team;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,21 @@ Route::group([
     })->name('dashboard');
     Route::resource('/teammates', TeammateController::class);
     Route::get('/team', function() {
-        return Inertia::render('Dashboard/Team');
+        $logo = "default.png";
+        $team_logo = Team::find(Auth::user()->team_id)->logo;
+        if($team_logo !== null) {
+            $logo = $team_logo;
+        }
+        return Inertia::render('Dashboard/Team', [
+            'logo' => asset("team_logos/".$logo)
+        ]);
     })->name('dashboard.team');
+    Route::post('/team', function(Request $request) {
+        $team = Team::find(Auth::user()->team_id);
+        $logo_name = $team->game . "_logo_" . $team->name . ".png";
+        $request->file('logo')->storeAs(
+            'team_logos', $logo_name
+        );
+        $team->update(['logo' => $logo_name]);
+    });
 });

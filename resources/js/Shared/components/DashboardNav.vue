@@ -14,7 +14,7 @@
                         </DashboardNavItem>
                     </li>
                     <li>
-                        <DashboardNavItem to="/dashboard/teammates" :active="{'active': $page.component === 'Dashboard/Team'}">
+                        <DashboardNavItem to="/dashboard/team" :active="{'active': $page.component === 'Dashboard/Team'}">
                             Zespół
                         </DashboardNavItem>
                     </li>

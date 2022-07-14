@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     protected $table = "teams";
-    protected $fillable = ["name", "about", "game"];
+    protected $fillable = ["name", "about", "game", "logo"];
     public $timestamps = false;
 
     public function captain() {
