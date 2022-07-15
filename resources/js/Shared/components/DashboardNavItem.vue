@@ -9,5 +9,4 @@
 import { Link } from '@inertiajs/inertia-vue3';
 
 const props = defineProps(["to", "active"]);
-console.log(props);
 </script>

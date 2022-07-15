@@ -9,12 +9,12 @@
             <div>
                 <ul class="list-none grid gap-y-2">
                     <li>
-                        <DashboardNavItem to="/dashboard/teammates" :active="{'active': $page.component === 'Dashboard/Teammates'}">
+                        <DashboardNavItem to="teammates" :active="{'active': $page.component === 'Dashboard/Teammates'}">
                             Zawodnicy
                         </DashboardNavItem>
                     </li>
                     <li>
-                        <DashboardNavItem to="/dashboard/team" :active="{'active': $page.component === 'Dashboard/Team'}">
+                        <DashboardNavItem to="team" :active="{'active': $page.component === 'Dashboard/Team'}">
                             Zespół
                         </DashboardNavItem>
                     </li>
