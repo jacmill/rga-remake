@@ -14,12 +14,12 @@
                             {{ teammate.is_empty ? "Ustaw" : "Edytuj" }}
                         </Link>
                     </div>
-                    <div v-if="!teammate.is_empty">
-                        <ul class="list-none">
-                            <li>Imię: {{ teammate.name }}</li>
-                            <li>Nazwisko: {{ teammate.last_name }}</li>
-                            <li>Wiek: {{ teammate.age }}</li>
-                            <li>Szkoła: {{ teammate.school }}</li>
+                    <div v-if="!teammate.is_empty" class="bg-zinc-500">
+                        <ul class="list-none flex justify-around">
+                            <li><span class="block">Imię:</span> {{ teammate.name }}</li>
+                            <li><span class="block">Nazwisko:</span> {{ teammate.last_name }}</li>
+                            <li><span class="block">Wiek:</span> {{ teammate.age }}</li>
+                            <li><span class="block">Szkoła:</span> {{ teammate.school }}</li>
                         </ul>
                     </div>
                 </li>
