@@ -1,8 +1,9 @@
 <template>
     <header class="flex gap-3 justify-evenly items-center bg-zinc-800 text-white py-2">
         <Link href="/"><img src="../../images/logo.svg" alt="logo" class=" w-36"></Link>
-        <Link v-if="team !== null" href="/dashboard">
-            {{ team.name }}
+        <Link v-if="team !== null" href="/dashboard" class="flex">
+            {{ team.name }} 
+            <img :src="`/team_logos/${team.logo}`" class="w=5"/>
         </Link>
         <Nav v-else />
     </header>
