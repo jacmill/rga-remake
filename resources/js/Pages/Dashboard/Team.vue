@@ -17,6 +17,7 @@
     </DashboardLayout>
 </template>
 <script setup>
+    import { Inertia } from '@inertiajs/inertia';
     import { useForm, usePage } from '@inertiajs/inertia-vue3';
     import DashboardLayout from '../../Shared/DashboardLayout.vue';
     const logo = usePage().props.value.auth.team.logo;
@@ -25,7 +26,8 @@
     });
     const submit = () => {
         form.post('/dashboard/team', {
-            forceFormData: true
+            forceFormData: true,
+            onSuccess: () => form.reset()
         });
     }
 </script>
