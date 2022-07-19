@@ -9,6 +9,9 @@
         </Link>
         <Nav v-else />
     </header>
+    <section class="max-h-screen w-full bg-zinc-700">
+        <slot name="landing"></slot>
+    </section>
 </template>
 <script setup>
     import Nav from './Nav.vue';
