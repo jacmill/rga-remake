@@ -1,10 +1,11 @@
 <template>
     <HomeLayout>
         <template v-slot:landing>
-            <h1>AA</h1>
+            <Countdown />
         </template>
     </HomeLayout>
 </template>
 <script setup>
     import HomeLayout from "../Shared/HomeLayout.vue";
+    import Countdown from "../Shared/components/Countdown.vue";
 </script>
