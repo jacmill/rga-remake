@@ -1,21 +1,12 @@
 <template>
-    <div class="flex gap-3">
-        <div>
-            <p>{{ display.get("days") }}</p>
-            <p>Dni</p>
+    <div class="flex gap-3 text-white font-bold justify-center">
+        <div v-for="[index, value] in display"
+             :key="index"
+             class="grid justify-items-center"
+        >
+            <p>{{ value }}</p>
+            <p>{{ getDisplayName(index) }}</p>   
         </div>
-        <div>
-            <p>{{ display.get("hours") }}</p>
-            <p>Godzin</p>
-        </div>    
-        <div>
-            <p>{{ display.get("minutes") }}</p>
-            <p>Minut</p>
-        </div>    
-        <div>
-            <p>{{ display.get("seconds") }}</p>
-            <p>Sekund</p>
-        </div>    
     </div>
 </template>
 <script setup>
@@ -24,11 +15,19 @@
 
     const launchDate = new Date("August 5, 2022 09:00:00");
     const display = new Map([
-        ["seconds", ref(0)],
-        ["minutes", ref(0)],
+        ["days", ref(0)],
         ["hours", ref(0)],
-        ["days", ref(0)]
+        ["minutes", ref(0)],
+        ["seconds", ref(0)]
     ]);
+    const getDisplayName = name => {
+        switch(name) {
+            case "seconds": return "Sekund"; break;
+            case "minutes": return "Minut"; break;
+            case "hours": return "Godzin"; break;
+            case "days": return "Dni"; break;
+        }
+    }
     const _seconds = 1000;
     const _minutes = _seconds * 60;
     const _hours = _minutes * 60;
