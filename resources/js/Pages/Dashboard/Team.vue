@@ -1,6 +1,5 @@
 <template>
-    <DashboardLayout>
-        <h1>Zespół</h1>
+    <DashboardLayout title="Zespół">
         <form @submit.prevent="submit">
             <label class="block">Logo drużyny</label>
             <div class="flex">

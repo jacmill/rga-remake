@@ -1,6 +1,5 @@
 <template>
-    <DashboardLayout>
-        <h1 class="text-white text-2xl font-bold">Zawodnicy</h1>
+    <DashboardLayout title="Zawodnicy">
         <section>
             <ul class="list-none w-1/2 grid gap-y-2 text-white">
                 <li v-for="(teammate, index) in teammates" :key="index" >
