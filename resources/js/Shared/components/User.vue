@@ -5,7 +5,7 @@
             :class="{'flex-row-reverse': side === 'left'}"
             >
                 {{ team.name }} 
-                <img :src="`/team_logos/${team.logo}`" 
+                <img :src="`/default/default.webp`" 
                     class="w-10 h-10 object-cover rounded-lg border-blue-500 border-2"/>
         </Link>
         <div class="flex gap-1">
@@ -32,4 +32,5 @@
     ]);
     const side = props.side;
     const team = usePage().props.value.auth.team;
+    const pathPrefix = team.logo.split('.')[0] === "default" ? '/default' : `/team_logos`;
 </script>

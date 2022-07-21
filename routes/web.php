@@ -41,7 +41,7 @@ Route::group([
     Route::get('/forgot_password', 'show_forgot_password')->name("password.request");
     Route::post('/forgot_password', 'forgot_password')->name("password.email");
     Route::get('/reset_password/{token}', 'show_reset_password')->name("password.reset");
-    Route::post('/reset_password/', 'reset_password')->name("password.update");
+    Route::post('/reset_password', 'reset_password')->name("password.update");
 });
 Route::group([
     "prefix" => "dashboard",
@@ -63,7 +63,7 @@ Route::group([
     })->name('dashboard.team');
     Route::post('/team', function(Request $request) {
         $team = Team::find(Auth::user()->team_id);
-        $logo_name = $team->game . "_logo_" . $team->name . ".png";
+        $logo_name = $team->game . "_logo_" . $team->name . ".webp";
         $request->file('logo')->storeAs(
             'team_logos', $logo_name
         );

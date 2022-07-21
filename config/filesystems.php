@@ -72,6 +72,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
         public_path('team_logos') => storage_path('app/team_logos'),
+        public_path('default') => storage_path('app/default'),
     ],
 
 ];

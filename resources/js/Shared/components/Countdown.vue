@@ -23,10 +23,10 @@
     const formatTime = time => time < 10 ? `0${time}` : time; 
     const getDisplayName = name => {
         switch(name) {
-            case "seconds": return "Sekund"; break;
-            case "minutes": return "Minut"; break;
-            case "hours": return "Godzin"; break;
-            case "days": return "Dni"; break;
+            case "seconds": return "Sekund";
+            case "minutes": return "Minut";
+            case "hours": return "Godzin";
+            case "days": return "Dni";
         }
     }
     const _seconds = 1000;
