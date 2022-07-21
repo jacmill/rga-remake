@@ -20,9 +20,8 @@
                     </li>
                 </ul>
             </div>
-            <div class=" self-end">
+            <div class="self-end">
                 <User side="left"/>
-                <Link href="/">Wyjdź</Link>
             </div>
         </nav>
     </aside>

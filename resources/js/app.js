@@ -3,13 +3,14 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowLeft, faArrowRightFromBracket }from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRightFromBracket, faHouse }from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import "../css/app.css";
 
 library.add(
   faArrowLeft,
-  faArrowRightFromBracket
+  faArrowRightFromBracket,
+  faHouse
 );
 
 createInertiaApp({
