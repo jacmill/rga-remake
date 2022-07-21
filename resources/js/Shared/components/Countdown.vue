@@ -35,7 +35,9 @@
     const showRemaining = setInterval(() => {
         const currentDate = new Date();
         const distance = launchDate.getTime() - currentDate.getTime();
-        
+        if(distance <= 0) {
+            clearInterval(showRemaining);
+        }
         display.get("seconds").value = Math.floor((distance % _minutes) / _seconds);
         display.get("minutes").value = Math.floor((distance  % _hours) / _minutes);
         display.get("hours").value = Math.floor((distance  % _days) / _hours);
