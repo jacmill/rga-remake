@@ -1,11 +1,11 @@
 <template>
-    <div class="flex gap-3 text-white font-bold justify-center">
+    <div class="flex gap-5 text-white font-bold justify-center">
         <div v-for="[name, currentTime] in display"
              :key="name"
              class="grid justify-items-center"
         >
-            <p>{{ currentTime.value }}</p>
-            <p>{{ getDisplayName(name) }}</p>   
+            <p class="text-4xl">{{ currentTime.value }}</p>
+            <p class="text-3xl">{{ getDisplayName(name) }}</p>   
         </div>
     </div>
 </template>

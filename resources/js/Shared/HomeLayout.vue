@@ -7,6 +7,9 @@
     <section class="w-full bg-zinc-700">
         <slot name="landing"></slot>
     </section>
+    <section>
+        <slot name="sponsors"></slot>
+    </section>
 </template>
 <script setup>
     import User from './components/User.vue';
