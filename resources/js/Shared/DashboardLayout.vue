@@ -7,5 +7,5 @@
     </div>
 </template>
 <script setup>
-    import DashboardNav from './components/DashboardNav.vue';
+    import DashboardNav from './components/Dashboard/DashboardNav.vue';
 </script>
