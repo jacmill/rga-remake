@@ -1,11 +1,11 @@
 <template>
     <div class="flex gap-3 text-white font-bold justify-center">
-        <div v-for="[index, value] in display"
-             :key="index"
+        <div v-for="[name, currentTime] in display"
+             :key="name"
              class="grid justify-items-center"
         >
-            <p>{{ value }}</p>
-            <p>{{ getDisplayName(index) }}</p>   
+            <p>{{ currentTime.value }}</p>
+            <p>{{ getDisplayName(name) }}</p>   
         </div>
     </div>
 </template>
@@ -20,6 +20,7 @@
         ["minutes", ref(0)],
         ["seconds", ref(0)]
     ]);
+    const formatTime = time => time < 10 ? `0${time}` : time; 
     const getDisplayName = name => {
         switch(name) {
             case "seconds": return "Sekund"; break;
@@ -38,10 +39,10 @@
         if(distance <= 0) {
             clearInterval(showRemaining);
         }
-        display.get("seconds").value = Math.floor((distance % _minutes) / _seconds);
-        display.get("minutes").value = Math.floor((distance  % _hours) / _minutes);
-        display.get("hours").value = Math.floor((distance  % _days) / _hours);
-        display.get("days").value = Math.floor(distance / _days);
+        display.get("seconds").value = formatTime(Math.floor((distance % _minutes) / _seconds));
+        display.get("minutes").value = formatTime(Math.floor((distance  % _hours) / _minutes));
+        display.get("hours").value = formatTime(Math.floor((distance  % _days) / _hours));
+        display.get("days").value = formatTime(Math.floor(distance / _days));
     }, 1000);
     onMounted(() => {
        showRemaining

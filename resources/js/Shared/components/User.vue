@@ -11,6 +11,7 @@
         <div class="flex gap-1">
             <Link href="/" as="button"
                 class="text-zinc-500 p-3 rounded-lg hover:bg-zinc-600 hover:text-white transition-all"
+                v-if="$page.component != 'Home'"
             >
                 <font-awesome-icon icon="house"/>
             </Link>
